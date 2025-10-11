@@ -12,7 +12,7 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.TreeSet;
 
-@ConfigurationProperties(prefix = "swagger", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "swagger")
 @Validated
 // immutability
 @Value
