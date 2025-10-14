@@ -28,6 +28,10 @@ Pick the most recent version from
 </dependencies>
 ```
 
+## Documentation
+
+To browse the API documentation, click [here](https://nicks.guru/commons/commons-swagger-starter/apidocs).
+
 ## Disclaimer
 
 THIS CODE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED
