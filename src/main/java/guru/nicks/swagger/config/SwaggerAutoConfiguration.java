@@ -37,7 +37,7 @@ import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
 @ConditionalOnProperty(value = "springdoc.api-docs.enabled", havingValue = "true")
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(SwaggerProperties.class)
-public class SwaggerConfig {
+public class SwaggerAutoConfiguration {
 
     /**
      * Created dynamically by this class. Should be mentioned in controllers' {@link SecurityRequirement#name()} to make
