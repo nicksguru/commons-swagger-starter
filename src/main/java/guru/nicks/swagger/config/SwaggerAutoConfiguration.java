@@ -81,7 +81,7 @@ public class SwaggerAutoConfiguration {
      */
     @ConstraintArguments
     private SecurityScheme createOauthSecurityScheme(SwaggerProperties.OAuth oauth) {
-        checkNotNull(oauth, _SwaggerConfigCreateOauthSecuritySchemeArgumentsMeta.OAUTH.name());
+        checkNotNull(oauth, _SwaggerAutoConfigurationCreateOauthSecuritySchemeArgumentsMeta.OAUTH.name());
         var scopes = new Scopes();
 
         Optional.ofNullable(oauth.getScopes())
@@ -127,7 +127,7 @@ public class SwaggerAutoConfiguration {
 
     @ConstraintArguments
     private Info createApiInfo(SwaggerProperties.ApiInfo apiInfo) {
-        checkNotNull(apiInfo, _SwaggerConfigCreateApiInfoArgumentsMeta.APIINFO.name());
+        checkNotNull(apiInfo, _SwaggerAutoConfigurationCreateApiInfoArgumentsMeta.APIINFO.name());
 
         return new Info()
                 .title(apiInfo.getTitle())
