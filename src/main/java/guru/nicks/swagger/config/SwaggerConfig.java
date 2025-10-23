@@ -2,6 +2,7 @@ package guru.nicks.swagger.config;
 
 import guru.nicks.swagger.domain.SwaggerProperties;
 
+import am.ik.yavi.meta.ConstraintArguments;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.models.security.Scopes;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
 import org.springdoc.core.utils.SpringDocUtils;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +27,8 @@ import java.security.Principal;
 import java.util.Map;
 import java.util.Optional;
 import java.util.TreeSet;
+
+import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
 
 /**
  * OpenAPIv3 config. Creates beans if the official Springfox enabler flag ({@code springdoc.api-docs.enabled}) is on.
@@ -51,6 +55,7 @@ public class SwaggerConfig {
      */
     public static final String API_KEY_AUTH_SCHEME_NAME = "X-API-Key";
 
+    @ConditionalOnMissingBean(OpenAPI.class)
     @Bean
     public OpenAPI openApi(SwaggerProperties swaggerProperties) {
         SpringDocUtils.getConfig()
@@ -74,7 +79,9 @@ public class SwaggerConfig {
     /**
      * See <a href="https://swagger.io/docs/specification/authentication/">this manual</a>.
      */
+    @ConstraintArguments
     private SecurityScheme createOauthSecurityScheme(SwaggerProperties.OAuth oauth) {
+        checkNotNull(oauth, _SwaggerConfigCreateOauthSecuritySchemeArgumentsMeta.OAUTH.name());
         var scopes = new Scopes();
 
         Optional.ofNullable(oauth.getScopes())
@@ -118,7 +125,10 @@ public class SwaggerConfig {
                 .in(SecurityScheme.In.HEADER);
     }
 
+    @ConstraintArguments
     private Info createApiInfo(SwaggerProperties.ApiInfo apiInfo) {
+        checkNotNull(apiInfo, _SwaggerConfigCreateApiInfoArgumentsMeta.APIINFO.name());
+
         return new Info()
                 .title(apiInfo.getTitle())
                 .description(apiInfo.getDescription())

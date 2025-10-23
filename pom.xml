@@ -5,7 +5,7 @@
     <parent>
         <groupId>guru.nicks.commons</groupId>
         <artifactId>parent</artifactId>
-        <version>1.2.0</version><!-- [BVM] -->
+        <version>1.2.1</version><!-- [BVM] -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -47,6 +47,10 @@
             <groupId>guru.nicks.commons</groupId>
             <artifactId>rest-dto</artifactId>
         </dependency>
+        <dependency>
+            <groupId>guru.nicks.commons</groupId>
+            <artifactId>utils</artifactId>
+        </dependency>
 
         <!-- Swagger -->
         <dependency>
@@ -64,6 +68,12 @@
             <artifactId>spring-security-core</artifactId>
         </dependency>
 
+        <!-- @ConstraintArguments -->
+        <dependency>
+            <groupId>am.ik.yavi</groupId>
+            <artifactId>yavi</artifactId>
+            <version>${yavi.version}</version>
+        </dependency>
         <!-- @Builder, @Slf4j, etc. -->
         <dependency>
             <groupId>org.projectlombok</groupId>
