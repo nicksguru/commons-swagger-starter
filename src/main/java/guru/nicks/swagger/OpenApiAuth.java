@@ -1,6 +1,6 @@
 package guru.nicks.swagger;
 
-import guru.nicks.swagger.config.SwaggerAutoConfiguration;
+import guru.nicks.swagger.config.CommonsSwaggerAutoConfiguration;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
@@ -15,9 +15,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 // without this, Swagger UI won't pass auth header to server
-@SecurityRequirement(name = SwaggerAutoConfiguration.OPENID_SCHEME_NAME)
-@SecurityRequirement(name = SwaggerAutoConfiguration.BEARER_TOKEN_SCHEME_NAME)
-@SecurityRequirement(name = SwaggerAutoConfiguration.API_KEY_AUTH_SCHEME_NAME)
-@SecurityRequirement(name = SwaggerAutoConfiguration.BASIC_AUTH_SCHEME_NAME)
+@SecurityRequirement(name = CommonsSwaggerAutoConfiguration.OPENID_SCHEME_NAME)
+@SecurityRequirement(name = CommonsSwaggerAutoConfiguration.BEARER_TOKEN_SCHEME_NAME)
+@SecurityRequirement(name = CommonsSwaggerAutoConfiguration.API_KEY_AUTH_SCHEME_NAME)
+@SecurityRequirement(name = CommonsSwaggerAutoConfiguration.BASIC_AUTH_SCHEME_NAME)
 public @interface OpenApiAuth {
 }

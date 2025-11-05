@@ -37,7 +37,7 @@ import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
 @ConditionalOnProperty(value = "springdoc.api-docs.enabled", havingValue = "true")
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(SwaggerProperties.class)
-public class SwaggerAutoConfiguration {
+public class CommonsSwaggerAutoConfiguration {
 
     /**
      * Created dynamically by this class. Should be mentioned in controllers' {@link SecurityRequirement#name()} to make
@@ -81,7 +81,7 @@ public class SwaggerAutoConfiguration {
      */
     @ConstraintArguments
     private SecurityScheme createOauthSecurityScheme(SwaggerProperties.OAuth oauth) {
-        checkNotNull(oauth, _SwaggerAutoConfigurationCreateOauthSecuritySchemeArgumentsMeta.OAUTH.name());
+        checkNotNull(oauth, _CommonsSwaggerAutoConfigurationCreateOauthSecuritySchemeArgumentsMeta.OAUTH.name());
         var scopes = new Scopes();
 
         Optional.ofNullable(oauth.getScopes())
@@ -127,7 +127,7 @@ public class SwaggerAutoConfiguration {
 
     @ConstraintArguments
     private Info createApiInfo(SwaggerProperties.ApiInfo apiInfo) {
-        checkNotNull(apiInfo, _SwaggerAutoConfigurationCreateApiInfoArgumentsMeta.APIINFO.name());
+        checkNotNull(apiInfo, _CommonsSwaggerAutoConfigurationCreateApiInfoArgumentsMeta.APIINFO.name());
 
         return new Info()
                 .title(apiInfo.getTitle())
