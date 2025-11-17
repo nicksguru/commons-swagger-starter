@@ -1,6 +1,6 @@
-package guru.nicks.swagger;
+package guru.nicks.commons.swagger;
 
-import guru.nicks.swagger.config.CommonsSwaggerAutoConfiguration;
+import guru.nicks.commons.swagger.config.CommonsSwaggerAutoConfiguration;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 

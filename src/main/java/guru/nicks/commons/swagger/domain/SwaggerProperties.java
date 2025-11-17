@@ -1,4 +1,4 @@
-package guru.nicks.swagger.domain;
+package guru.nicks.commons.swagger.domain;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;

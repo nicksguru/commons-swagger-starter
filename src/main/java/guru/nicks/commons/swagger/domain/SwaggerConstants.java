@@ -1,4 +1,4 @@
-package guru.nicks.swagger.domain;
+package guru.nicks.commons.swagger.domain;
 
 import lombok.experimental.UtilityClass;
 

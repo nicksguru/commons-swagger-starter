@@ -1,4 +1,4 @@
-package guru.nicks.swagger;
+package guru.nicks.commons.swagger;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;

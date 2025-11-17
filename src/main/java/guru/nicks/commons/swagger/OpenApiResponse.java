@@ -1,6 +1,6 @@
-package guru.nicks.swagger;
+package guru.nicks.commons.swagger;
 
-import guru.nicks.rest.v1.dto.BusinessExceptionDto;
+import guru.nicks.commons.rest.v1.dto.BusinessExceptionDto;
 
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

@@ -1,6 +1,6 @@
-package guru.nicks.swagger.config;
+package guru.nicks.commons.swagger.config;
 
-import guru.nicks.swagger.domain.SwaggerProperties;
+import guru.nicks.commons.swagger.domain.SwaggerProperties;
 
 import am.ik.yavi.meta.ConstraintArguments;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.TreeSet;
 
-import static guru.nicks.validation.dsl.ValiDsl.checkNotNull;
+import static guru.nicks.commons.validation.dsl.ValiDsl.checkNotNull;
 
 /**
  * OpenAPIv3 config. Creates beans if the official Springfox enabler flag ({@code springdoc.api-docs.enabled}) is on.
