@@ -14,6 +14,7 @@ import io.swagger.v3.oas.models.security.OAuthFlows;
 import io.swagger.v3.oas.models.security.Scopes;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.utils.SpringDocUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -37,6 +38,7 @@ import static guru.nicks.commons.validation.dsl.ValiDsl.checkNotNull;
 @ConditionalOnProperty(value = "springdoc.api-docs.enabled", havingValue = "true")
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(SwaggerProperties.class)
+@Slf4j
 public class CommonsSwaggerAutoConfiguration {
 
     /**
@@ -55,9 +57,14 @@ public class CommonsSwaggerAutoConfiguration {
      */
     public static final String API_KEY_AUTH_SCHEME_NAME = "X-API-Key";
 
+    /**
+     * Creates {@link OpenAPI} bean if it's not already present.
+     */
     @ConditionalOnMissingBean(OpenAPI.class)
     @Bean
     public OpenAPI openApi(SwaggerProperties swaggerProperties) {
+        log.debug("Building {} bean", OpenAPI.class.getSimpleName());
+
         SpringDocUtils.getConfig()
                 // don't list currently logged-in user among controller arguments
                 .addRequestWrapperToIgnore(AuthenticatedPrincipal.class)
