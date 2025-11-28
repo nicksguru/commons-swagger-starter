@@ -55,6 +55,7 @@ public class SwaggerProperties {
         String title;
         String description;
         String version;
+
         String termsOfServiceUrl;
         String license;
         String licenseUrl;
