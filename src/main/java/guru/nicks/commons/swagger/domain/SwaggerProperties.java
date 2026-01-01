@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Value;
 import lombok.experimental.NonFinal;
-import lombok.extern.jackson.Jacksonized;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
 
@@ -17,7 +16,6 @@ import java.util.TreeSet;
 // immutability
 @Value
 @NonFinal // CGLIB creates a subclass to bind property values (nested classes don't need this)
-@Jacksonized
 @Builder(toBuilder = true)
 public class SwaggerProperties {
 
@@ -30,7 +28,6 @@ public class SwaggerProperties {
     SwaggerProperties.ApiInfo apiInfo;
 
     @Value
-    @Jacksonized
     @Builder(toBuilder = true)
     public static class OAuth {
 
@@ -48,7 +45,6 @@ public class SwaggerProperties {
     }
 
     @Value
-    @Jacksonized
     @Builder(toBuilder = true)
     public static class ApiInfo {
 
@@ -64,7 +60,6 @@ public class SwaggerProperties {
         Contact contact;
 
         @Value
-        @Jacksonized
         @Builder(toBuilder = true)
         public static class Contact {
 
