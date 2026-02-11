@@ -1,8 +1,7 @@
 package guru.nicks.commons.swagger.config;
 
-import guru.nicks.commons.swagger.domain.SwaggerProperties;
-
 import am.ik.yavi.meta.ConstraintArguments;
+import guru.nicks.commons.swagger.domain.SwaggerProperties;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
