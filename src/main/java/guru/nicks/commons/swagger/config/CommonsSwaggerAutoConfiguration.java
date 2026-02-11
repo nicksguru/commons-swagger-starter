@@ -15,11 +15,11 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
 import lombok.extern.slf4j.Slf4j;
 import org.springdoc.core.utils.SpringDocUtils;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.AuthenticatedPrincipal;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
@@ -35,7 +35,7 @@ import static guru.nicks.commons.validation.dsl.ValiDsl.checkNotNull;
  * Beans created here merely add something to Swagger pages: authentication types and API title.
  */
 @ConditionalOnProperty(value = "springdoc.api-docs.enabled", havingValue = "true")
-@Configuration(proxyBeanMethods = false)
+@AutoConfiguration
 @EnableConfigurationProperties(SwaggerProperties.class)
 @Slf4j
 public class CommonsSwaggerAutoConfiguration {
